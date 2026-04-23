@@ -1,0 +1,362 @@
+{
+  "info": {
+    "_postman_id": "76d43e19-9883-4164-9142-9bacbbb94c9f",
+    "name": "KMS 민간",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26407222"
+  },
+  "item": [
+    {
+      "name": "Encrypt",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"plaintext\" : \"asdf\",\r\n  \"context\": \"asdf\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/kms/v1/keys/:keyTag/encrypt",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "kms",
+            "v1",
+            "keys",
+            ":keyTag",
+            "encrypt"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "b56ae6dc08e1518495252f40787013783057639c6fbb69dca94a4e5fc133da44"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Encrypt 격리",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"plaintext\" : \"asdf\",\r\n  \"context\" : \"asdf\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/kms/v1/keys/:keyTag/encrypt",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "kms",
+            "v1",
+            "keys",
+            ":keyTag",
+            "encrypt"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "b56ae6dc08e1518495252f40787013783057639c6fbb69dca94a4e5fc133da44"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Decrypt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ciphertext\" : \"ncpkms:v2:wNvhW4PuSuoOUYS3mQGBX+rKfS7Gq/MNMv59kHVz/w==\",\r\n  \"context\" : \"asdf\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/kms/v1/keys/:keyTag/decrypt",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "kms",
+            "v1",
+            "keys",
+            ":keyTag",
+            "decrypt"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "kr-ca554ca262153a75ec0c9a85ab60a7576fd2e756cd7f8fd21943d1d743bde62b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create user custom key",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"requestPlainKey\" : false,\r\n  \"context\" : \"dGhpcyBpcyBhIHRlc3QgY29udGV4dA==\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/keys/v2/:keyTag/createCustomKey",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "keys",
+            "v2",
+            ":keyTag",
+            "createCustomKey"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "340e9d8973a05727073e63b4d9485438dcdf72b5f2afaf00f2d15c94c6c4f8eb"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Re-encrypt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ciphertext\" : \"ncpkms:v4:jV8wLTWAA5XAdcebUP7zJbYMEtHdEBfCrV3r7flG4Q==\",\r\n  \"context\" : \"asdf\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/keys/v2/:keyTag/reencrypt",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "keys",
+            "v2",
+            ":keyTag",
+            "reencrypt"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "e9fa5fb05353198a456f860c5f9b0646b21b84cbbdab2ee9347a1eabb6aa390b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sign",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"data\" : \"aGVsbG8gd29ybGQ=\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/keys/v2/:keyTag/sign",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "keys",
+            "v2",
+            ":keyTag",
+            "sign"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "0775973df77dbeab993ea0aeca1d5167985412859f6cb5fabdbb45d365418e17"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"data\" : \"aGVsbG8gd29ybGQ=\",\r\n  \"signature\" : \"ncpkms:v2:aVLEeNsKwqnD9P0xCzO9pNOWG9Fdbx6VgTnEDJn2pEjjJxxputnVDqSnoKFvDdmpWetdI/AuEzShxnqB8RnOm/VbUg3ZOyH94r9WF5iXeaxSukmi/N45+B2en8OD5MznC6hWcT7qTa0pv6CCiZ20/Cb6p0IrsswJAOeLZJExMl8Nsk4NwN2qv0kV+1XEKOqY/2IC1MPvkZmHWSbu/AtswVyAcb3GCnHapgIvKD2ELL0ek+0kyi4Ml1DCkV6BWaI6fadM0iiQHpZtIvkVUxkScQ1eK+j9dkIfa80MQuSmzq86wwFs9oc6jmiDPP1PQh8o5KkYnwifp0UdhXxnYptdaQ==\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/keys/v2/:keyTag/verify",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "keys",
+            "v2",
+            ":keyTag",
+            "verify"
+          ],
+          "variable": [
+            {
+              "key": "keyTag",
+              "value": "0775973df77dbeab993ea0aeca1d5167985412859f6cb5fabdbb45d365418e17"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Key",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "x-ncp-iam",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "<API Key>",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"keyName\": \"tset\",\n  \"keyType\": \"AES256\",\n  \"isAutoRotation\": \"true\",\n  \"protectionType\":\"BASIC\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}/kms/v1/keys",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "kms",
+            "v1",
+            "keys"
+          ]
+        },
+        "description": "Generate Key"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "console.log(\"collection pre-request scripts 시작\")",
+          "",
+          "const accessKey = pm.environment.get('ACCESS_KEY');",
+          "const secretKey = pm.environment.get('SECRET_KEY');",
+          "const TIMESTAMP = new Date().getTime().toString();",
+          "pm.variables.set(\"TIMESTAMP\", TIMESTAMP);",
+          "",
+          "const utils = eval(pm.globals.get('loadUtils'));",
+          "const hash = utils.makeSignature(secretKey, accessKey,TIMESTAMP);",
+          "pm.variables.set('HASH', hash);",
+          "",
+          "// set header",
+          "pm.request.headers.add({ key: \"x-ncp-iam-access-key\", value: pm.environment.get('ACCESS_KEY')})",
+          "pm.request.headers.add({ key: \"x-ncp-apigw-timestamp\", value: pm.variables.get('TIMESTAMP')})",
+          "pm.request.headers.add({ key: \"x-ncp-apigw-signature-v2\", value: pm.variables.get('HASH')})",
+          "",
+          "",
+          "console.log(\"collection pre-request scripts종료\")"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
